@@ -30,10 +30,6 @@ export default class Home extends Component {
         <h1></h1>
         <Character character={data}/>
         <button onClick={this.handleClick}>New Character</button>
-        <form>
-          <input type="text" placeholder="character name"></input>
-          <button>Go!</button>
-        </form>
       </>
     );
   }
