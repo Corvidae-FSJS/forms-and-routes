@@ -14,16 +14,16 @@ export default class Home extends Component {
     name: ''
   };
 
-
   newCharacter() {
-    return getCharacter('api/v1/characters/random')
+    return getCharacter('/api/v1/characters/random')
       .then(data => this.setState({ data: data[0] }));
   }
+
   componentDidMount() {
     this.newCharacter();
   }
 
-  handleClick() {
+  handleClick = () => {
     this.newCharacter();
   }
 
@@ -31,11 +31,10 @@ export default class Home extends Component {
     event.preventDefault();
     this.props.history.push(`/list/${this.state.name}`);
   }
-
   handleChange = ({ target }) => {
     this.setState({ name: target.value });
   }
-
+  
   render() {
     const { data, name } = this.state;
     return (
