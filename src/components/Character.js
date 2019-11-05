@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getCharacter from '../services/api-call';
 
 const Character = ({ character }) => {
   return (

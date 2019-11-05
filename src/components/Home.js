@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Character from './Character';
 import getCharacter from '../services/api-call';
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      data: {}
-    };
+export default class Home extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
   }
 
+  state = {
+    data: {},
+    name: ''
+  };
+
+
   newCharacter() {
-    return getCharacter()
+    return getCharacter('api/v1/characters/random')
       .then(data => this.setState({ data: data[0] }));
   }
   componentDidMount() {
@@ -23,8 +27,17 @@ export default class Home extends Component {
     this.newCharacter();
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.history.push(`/list/${this.state.name}`);
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ name: target.value });
+  }
+
   render() {
-    const { data } = this.state;
+    const { data, name } = this.state;
     return (
       <>
         <h1></h1>
