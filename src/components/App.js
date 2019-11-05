@@ -10,7 +10,7 @@ import List from './List';
 import Detail from './Detail';
 import Footer from './Footer';
 
-export default function App() {
+const App = () => {
   return (
     <Router>
       <>
@@ -24,4 +24,6 @@ export default function App() {
       </>
     </Router>
   );
-}
+};
+
+export default App;

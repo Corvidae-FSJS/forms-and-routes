@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
 import getCharacter from '../services/api-call';
-
+import Form from './Form';
 
 export default class Home extends Component {
   static propTypes = {
@@ -43,6 +43,10 @@ export default class Home extends Component {
         <h1></h1>
         <Character character={data}/>
         <button onClick={this.handleClick}>New Character</button>
+        <Form
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          name={name}/>
       </>
     );
   }
