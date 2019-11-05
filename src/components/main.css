@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box
+}
+
+html {
+  height: 100vw
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0px;
+  background-color: black;
+}
