@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 const Character = ({ character }) => {
   return (
     <div>
-      {character}
+      <img src={character.photoUrl} />
+      <h2>{character.name}</h2>
     </div>
   );
 };
